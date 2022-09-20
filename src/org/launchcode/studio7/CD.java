@@ -1,10 +1,23 @@
 package org.launchcode.studio7;
 
-public class CD {
+public class CD extends BaseDisc implements OpticalDisc{
+    CD() {
+        super("CD");
+    }
 
-    // TODO: Implement your custom interface.
+    @Override
+    public void spinDisc() {
+        System.out.println("A CD spins at a rate of 200 - 500 rpm.");
+    }
 
-    // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
-    //  need to be declared separately.
+    @Override
+    public void writeData(String contents) {
+        this.contents = contents;
+        System.out.println(discType + " contents: " + contents);
+    }
 
+    @Override
+    public void readData() {
+        System.out.println(discType + " contents: " + contents);
+    }
 }
